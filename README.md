@@ -8,6 +8,8 @@ This project aims for 100% compliance with [RFC
 missing, please [open an
 issue](https://github.com/watson/rtsp-server/issues).
 
+This version has been forked to include close functionality.
+
 [![Build status](https://travis-ci.org/watson/rtsp-server.svg?branch=master)](https://travis-ci.org/watson/rtsp-server)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 

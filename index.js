@@ -13,11 +13,13 @@ exports.ServerResponse = rtsp.Response
 
 exports.createServer = function (onRequest) {
   var server = net.createServer()
+  server.clients = []
 
   if (onRequest) server.addListener('request', onRequest)
 
   server.on('connection', function (socket) {
     debug('new socket connection')
+    server.clients.push(socket)
 
     socket.on('error', function (err) {
       debug('error on socket connection', err.message)
@@ -29,6 +31,7 @@ exports.createServer = function (onRequest) {
     })
 
     socket.on('close', function () {
+      server.clients.splice(server.clients.indexOf(socket), 1)
       debug('socket connection closed')
     })
 
